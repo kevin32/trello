@@ -20,6 +20,13 @@ const Layout = () => {
 
                 }}
             />
+            <Stack.Screen
+                name="new-board"
+                options={{
+                    headerShown: false,
+                    presentation: "modal"
+                }}
+            />
         </Stack>
     );
 }

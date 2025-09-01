@@ -4,6 +4,7 @@ import {AuthProvider, useAuth} from "../context/AuthContext";
 import {useEffect} from "react";
 import {Colors} from "../constants/Colors"
 import {ActivityIndicator, View} from "react-native";
+import {SupabaseProvider} from "../context/SupabaseContext";
 
 const InitialLayout = () => {
 
@@ -34,10 +35,12 @@ const InitialLayout = () => {
 
 
     return (
-        <Stack>
-            <Stack.Screen name="auth" options={{headerShown: false}}/>
-            <Stack.Screen name="(authenticated)" options={{headerShown: false}}/>
-        </Stack>
+        <SupabaseProvider>
+            <Stack>
+                <Stack.Screen name="auth" options={{headerShown: false}}/>
+                <Stack.Screen name="(authenticated)" options={{headerShown: false}}/>
+            </Stack>
+        </SupabaseProvider>
     )
 }
 
